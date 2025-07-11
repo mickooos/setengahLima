@@ -71,14 +71,14 @@ cd setengahLima
 ```bash
 # Client
 cd client
-npm install && npm run dev
+npm install 
 
 # Admin
-cd client
-npm install && npm run dev
+cd server
+npm install 
 
-# Backend
-cd ../server
+# Server
+cd server
 npm install
 ```
 
@@ -123,7 +123,10 @@ cd server
 npm run serve
 
 # Start client && admin (in another terminal)
-cd ../client or admin
+cd client 
+npm run dev
+
+cd admin
 npm run dev
 ```
 
