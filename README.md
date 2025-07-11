@@ -1,4 +1,4 @@
-# ☕ setengahLima 
+<img width="1024" height="1024" alt="setengahLimaLogo" src="https://github.com/user-attachments/assets/16e48661-0cf0-42d9-a109-03aee0231aef" />
 
 A modern full-stack web application that enables customers to browse menus, customize orders, and make seamless transactions at a coffee shop — all in real time.
 
@@ -126,6 +126,15 @@ npm run serve
 cd ../client or admin
 npm run dev
 ```
+
+### App Preview
+<img width="1901" height="915" alt="{4992A968-C336-4A22-B620-2A2040EDA1D1}" src="https://github.com/user-attachments/assets/a3cbd939-df2c-4ab2-86fd-c6c8a46e2e71" />
+<img width="1920" height="917" alt="{8D5A690A-59A2-40C8-AE6C-6174736C2FD2}" src="https://github.com/user-attachments/assets/49b953c6-202b-430f-9975-c64c03d69c1e" />
+<img width="1920" height="915" alt="{A17E032C-CDBA-4D0F-BCA0-E82C7822A508}" src="https://github.com/user-attachments/assets/ec1ecb6c-cc5b-4618-a23d-bcda78a5457f" />
+<img width="1920" height="914" alt="{EA89D912-36A6-4D75-8014-0A5DBCC323C7}" src="https://github.com/user-attachments/assets/308075bc-ad62-4138-ad08-483cb3a7df50" />
+<img width="1917" height="911" alt="{2EDFBDCA-573C-48C2-B150-71578AB70905}" src="https://github.com/user-attachments/assets/d5c9fb90-9c1b-428e-8a92-94725b6ebcb3" />
+<img width="1920" height="914" alt="{D08C22A6-C3C5-483E-8343-5C6A38F77EA8}" src="https://github.com/user-attachments/assets/8068391a-1abd-4663-985d-8f161f5233d6" />
+
 📚 Resources
 
 - [Midtrans Documentation](https://docs.midtrans.com/)
