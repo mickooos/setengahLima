@@ -1,0 +1,29 @@
+APP_PORT=
+CLI_PORT=
+ADM_PORT=
+DB_PWD=
+
+# Connect to Supabase via connection pooling
+DATABASE_URL=""
+
+# Direct connection to the database. Used for migrations
+DIRECT_URL=""
+  
+SUPABASE_URL=""
+SUPABASE_ANON_KEY=""
+SUPABASE_BUCKET_NAME="sl-store"
+SUPABASE_BUCKET_PATH="menu-img"
+
+ADMIN_PASSWORD=
+ACCESS_TOKEN=
+REFRESH_TOKEN=
+ACCESS_TOKEN_EXPIRE=
+REFRESH_TOKEN_EXPIRE=
+
+# Midtrans server key 
+MIDTRANS_SERVER_KEY=
+
+# UltraMsg 
+ULTRAMSG_API_URL=
+ULTRAMSG_INSTANCE_ID=
+ULTRAMSG_API_TOKEN=

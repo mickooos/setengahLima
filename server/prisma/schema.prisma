@@ -1,0 +1,156 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl =  env("DIRECT_URL")
+}
+
+model Menu {
+  id              Int  @id @default(autoincrement())
+  nama            String @unique
+  deskripsi       String
+  harga           Float
+  status          StatusMenu @default(AVAILABLE)
+  gambar          String
+  kategori        KategoriMenu @relation(fields: [kategori_id], references: [id])
+  kategori_id     Int 
+  keranjang       Keranjang[]
+  pesananMenu     PesananMenu[]
+  sales           Sales[]
+  terjual         Int @default(0)
+  tanggalBuat     DateTime @default(now())
+  tanggalEdit     DateTime @updatedAt
+}
+
+model KategoriMenu {
+  id              Int @id @default(autoincrement())
+  nama            String @unique
+  menu            Menu[]
+  tanggalBuat     DateTime @default(now())
+  tanggalEdit     DateTime @updatedAt
+}
+
+model Meja {
+  id              String @id @default(cuid())
+  nomorMeja       Int @unique
+  jumlahBangku    Int
+  statusMeja      StatusMeja @default(UNRESERVED)
+  tableUrl        String @unique
+  tableCode       String
+  keranjang       Keranjang[] 
+  pesanan         Pesanan[]
+  reservasi       Reservasi[]
+  tanggalBuat     DateTime @default(now())
+  tanggalEdit     DateTime @updatedAt
+}
+
+model Pesanan {
+  id                String @id @default(cuid())
+  pesananId         String
+  jumlahBayar       Float
+  noMeja            Int 
+  meja              Meja @relation(fields: [noMeja], references: [nomorMeja])
+  metodePembayaran  MetodePembayaran
+  statusPesanan     StatusPesanan
+  statusPembayaran  StatusPembayaran
+  pesananMenu       PesananMenu[]
+  tanggalBuat       DateTime @default(now())
+  tanggalEdit       DateTime @updatedAt
+}
+
+model PesananMenu {
+  id              String @id @default(cuid())
+  menu            Menu @relation(fields: [menu_id], references: [id])
+  menu_id         Int
+  pesanan         Pesanan @relation(fields: [pesanan_id], references: [id], onDelete: Cascade)
+  pesanan_id      String
+  kuantiti        Int
+  catatan         String? 
+  tanggalBuat     DateTime @default(now())
+  tanggalEdit     DateTime @updatedAt
+}
+
+model Keranjang {
+  id              String @id @default(cuid())
+  meja            Meja @relation(fields: [noMeja], references: [nomorMeja])
+  noMeja          Int    
+  menu            Menu @relation(fields: [menu_id], references: [id])
+  menu_id         Int 
+  kuantiti        Int
+  catatan         String?
+  tanggalBuat     DateTime @default(now())
+  tanggalEdit     DateTime @updatedAt
+}
+
+model Reservasi {
+  id                String @id @default(cuid())
+  nama              String @unique
+  kontak            String
+  jumlahTamu        Int
+  tanggalReservasi  DateTime
+  meja              Meja @relation(fields: [noMeja], references: [nomorMeja])      
+  noMeja            Int 
+  tanggalBuat       DateTime @default(now())
+  tanggalEdit       DateTime @updatedAt
+}
+
+model Revenue {
+  id                Int @id @default(autoincrement())
+  income            Float
+  tanggalBuat       DateTime @default(now())
+}
+
+model Sales {
+  id                Int @id @default(autoincrement())
+  menu              Menu @relation(fields: [menu_id], references: [id])
+  menu_id           Int
+  jumlah            Int
+  tanggal           DateTime @default(now())
+}
+
+model Admin {
+  id            String    @id @default(cuid())
+  nama          String
+  email         String @unique
+  password      String
+  refreshToken  String?
+  tanggalBuat   DateTime @default(now())
+  tanggalEdit   DateTime @updatedAt
+}
+
+enum StatusMeja {
+  RESERVED
+  UNRESERVED
+}
+
+enum StatusMenu {
+  AVAILABLE
+  UNAVAILABLE
+}
+
+enum MetodePembayaran {
+  CASH
+  CASHLESS
+}
+
+enum StatusPembayaran {
+  PENDING_PAYMENT
+  PAID
+}
+
+enum StatusPesanan {
+  CONFIRMED
+  IN_PROGRESS
+  DELIVERED
+  COMPLETED
+  CANCELLED
+}
