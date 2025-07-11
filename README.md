@@ -74,7 +74,7 @@ cd client
 npm install 
 
 # Admin
-cd server
+cd admin
 npm install 
 
 # Server
