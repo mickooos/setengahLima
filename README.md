@@ -1,4 +1,4 @@
-<img width="1024" height="1024" alt="setengahLimaLogo" src="https://github.com/user-attachments/assets/16e48661-0cf0-42d9-a109-03aee0231aef" />
+<img width="600" height="400" alt="setengahLimaLogo" src="https://github.com/user-attachments/assets/16e48661-0cf0-42d9-a109-03aee0231aef" />
 
 A modern full-stack web application that enables customers to browse menus, customize orders, and make seamless transactions at a coffee shop — all in real time.
 
@@ -138,7 +138,7 @@ npm run dev
 <img width="1917" height="911" alt="{2EDFBDCA-573C-48C2-B150-71578AB70905}" src="https://github.com/user-attachments/assets/d5c9fb90-9c1b-428e-8a92-94725b6ebcb3" />
 <img width="1920" height="914" alt="{D08C22A6-C3C5-483E-8343-5C6A38F77EA8}" src="https://github.com/user-attachments/assets/8068391a-1abd-4663-985d-8f161f5233d6" />
 
-📚 Resources
+### 📚 Resources
 
 - [Midtrans Documentation](https://docs.midtrans.com/)
 - [Supabase Documentation](https://supabase.com/docs)
