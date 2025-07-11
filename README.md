@@ -1,4 +1,4 @@
-<img width="600" height="400" alt="setengahLimaLogo" src="https://github.com/user-attachments/assets/16e48661-0cf0-42d9-a109-03aee0231aef" />
+<img width="600" height="600" alt="setengahLimaLogo" src="https://github.com/user-attachments/assets/16e48661-0cf0-42d9-a109-03aee0231aef" />
 
 A modern full-stack web application that enables customers to browse menus, customize orders, and make seamless transactions at a coffee shop — all in real time.
 
